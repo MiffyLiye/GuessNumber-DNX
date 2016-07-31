@@ -1,0 +1,30 @@
+{
+    "version": "0.1.0",
+    "command": "dotnet",
+    "isShellCommand": true,
+    "args": [],
+    "tasks": [
+        {
+            "suppressTaskName": true,
+            "taskName": "restore",
+            "args": ["restore"],
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "suppressTaskName": true,
+            "taskName": "build",
+            "args": ["build", "*/*/project.json"],
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "suppressTaskName": true,
+            "taskName": "test",
+            "args": ["test", "test/GuessNumberTest"],
+            "isBuildCommand": false,
+            "isTestCommand": true,
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
