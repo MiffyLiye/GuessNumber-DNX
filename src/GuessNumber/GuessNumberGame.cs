@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 
 namespace GuessNumber
@@ -8,17 +7,17 @@ namespace GuessNumber
     {
         private readonly TextReader _textReader;
         private readonly TextWriter _textWriter;
+        private readonly IGuessNumberConfig _appSettings;
         private readonly IAnswerGenerator _answerGenerator;
         private readonly NumberComparer _numberComparer;
-        private readonly IGuessNumberConfig _appSettings;
 
-        public GuessNumberGame(TextReader textReader = null, TextWriter textWriter = null, IAnswerGenerator answerGenerator = null, IGuessNumberConfig config = null)
+        public GuessNumberGame(TextReader textReader, TextWriter textWriter, IGuessNumberConfig config, IAnswerGenerator answerGenerator = null)
         {
-            _textReader = textReader ?? Console.In;
-            _textWriter = textWriter ?? Console.Out;
+            _textReader = textReader;
+            _textWriter = textWriter;
             _answerGenerator = answerGenerator ?? new AnswerGenerator();
             _numberComparer = new NumberComparer();
-            _appSettings = config ?? new GuessNumberConfig();
+            _appSettings = config;
         }
 
         public void Drive()

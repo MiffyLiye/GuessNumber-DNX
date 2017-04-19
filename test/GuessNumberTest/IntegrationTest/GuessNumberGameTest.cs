@@ -17,7 +17,7 @@ namespace GuessNumberTest
         private GuessNumberGame Game { get; }
         public GuessNumberGameTest()
         {
-            Game = new GuessNumberGame(TextReaderStub, TextWriterSpy, AnswerGeneratorStub, ConfigStub);
+            Game = new GuessNumberGame(TextReaderStub, TextWriterSpy, ConfigStub, AnswerGeneratorStub);
         }
 
         [Fact]
