@@ -1,25 +1,24 @@
 # GuessNumber .NET Core
-[![Build Status](https://travis-ci.org/MiffyLiye/GuessNumber-DNX.svg?branch=master)](https://travis-ci.org/MiffyLiye/GuessNumber-DNX)
 [![Build status](https://ci.appveyor.com/api/projects/status/133k8341khalfov8/branch/master?svg=true)](https://ci.appveyor.com/project/MiffyLiye/guessnumber-dnx/branch/master)
 
 ## How to start
 
 ### Build
-```shell
+```powershell
 dotnet restore
-dotnet build -c Release */*/project.json
+dotnet build -c Release .\GuessNumber.sln
 ```
 
 ### Test
-```shell
-dotnet test -c Release test/*
+```powershell
+dotnet test -c Release .\test\GuessNumberTest\GuessNumberTest.csproj
 ```
 
 ### Change Default Config
-Edit ```src/GuessNumber/bin/Release/netcoreapp1.0/appsettings.json```,
+Edit ```.\src\GuessNumber\bin\Release\netcoreapp1.0\appsettings.json```,
 change ```InitialChancesCount``` to adjust the difficulty.
 
 ### Play
-```shell
-dotnet src/GuessNumber/bin/Release/netcoreapp1.0/GuessNumber.dll
+```powershell
+dotnet  .\src\GuessNumber\bin\Release\netcoreapp1.0\GuessNumber.dll
 ```
